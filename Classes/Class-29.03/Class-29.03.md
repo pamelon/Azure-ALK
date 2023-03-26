@@ -56,21 +56,21 @@ Region:
 
 A region is a geographical area on the planet that contains at least one, but potentially multiple datacenters that are nearby and networked together with a low-latency network. Azure intelligently assigns and controls the resources within each region to ensure workloads are appropriately balanced.
 
-When you deploy a resource in Azure, you'll often need to choose the region where you want your resource deployed
+When you deploy a resource in Azure, you'll often need to choose the region where you want your resource deployed  
 Source: https://learn.microsoft.com/en-us/certifications/azure-fundamentals/
 
 Availability Zone: 
 
 Availability zones are physically separate datacenters within an Azure region. Each availability zone is made up of one or more datacenters equipped with independent power, cooling, and networking. An availability zone is set up to be an isolation boundary. If one zone goes down, the other continues working. Availability zones are connected through high-speed, private fiber-optic networks.
 
-![](img/az.png)
+![](img/az.png)  
 Source: https://learn.microsoft.com/en-us/certifications/azure-fundamentals/
 
-Region pairs:
+Region pairs:  
 
 Making a pair for a region is made for high availability. This approach allows for the replication of resources across a geography that helps reduce the likelihood of interruptions because of events such as natural disasters, civil unrest, power outages, or physical network outages that affect an entire region. For example, if a region in a pair was affected by a natural disaster, services would automatically fail over to the other region in its region pair.
 
-![](img/region-pair.png)
+![](img/region-pair.png)  
 Source: https://learn.microsoft.com/en-us/certifications/azure-fundamentals/
 
 # Let us use Azure!

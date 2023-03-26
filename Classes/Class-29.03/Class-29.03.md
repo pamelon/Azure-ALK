@@ -84,9 +84,12 @@ The Azure free student account offer includes:
 4. The Azure free student account is an offer for students that gives $100 credit and free developer tools. Also, you can sign up without a credit card.
 5. Get access: https://azure.microsoft.com/en-us/free/students/ 
 
+# Homework 
 
+Create Azure Resources in different regions and different resource groups. See what types of resources are available. 
 
-
+![](img/azure-resources.png)  
+Source: https://learn.microsoft.com/en-us/certifications/azure-fundamentals/
 
 
 

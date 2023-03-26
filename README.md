@@ -11,7 +11,7 @@ Class dates and contents are as follows:
 | Date         | Time          | Subject                                 | Materials                                    |
 |--------------|---------------|-----------------------------------------|----------------------------------------------|
 | 29.03 (Wed)  | 15:45 - 18:15 |  Azure Access, Introduction to Cloud    | [29.03](Classes/Class-29.03/Class-29.03.md)  |
-| 05.04 (Wed)  | 15:45 - 18:15 |  Mail Services in Microsoft Azure       | [05.04](Classes/Class-25.04/Class-25.04.md)  |
+| 05.04 (Wed)  | 15:45 - 18:15 |  Mail Services in Microsoft Azure       | [05.04](Classes/Class-05.04/Class-05.04.md)  |
 | 19.04 (Wed)  | 15:45 - 18:15 |  Data Services in Azure                 | [19.04](Classes/Class-19.04/Class-19.04.md)  |
 | 26.04 (Wed)  | 15:45 - 18:15 |  Working with Azure Storage             | [26.04](Classes/Class-26.04/Class-26.04.md)  |
 | 10.05 (Wed)  | 15:45 - 18:15 |  Azure Data Factory & Synapse Analytics | [10.05](Classes/Class-10.05/Class-10.05.md)  |
@@ -23,7 +23,7 @@ We will be working on the given subject and learn each day until 17:30.
 
 Materials used during classes will be shared in this repository in the coresponding folders. 
 
-The environment set up for what we are starting with is explained here: https://www.tutorialspoint.com/keras/keras_installation.htm. We'll be using python virtual environments and will have some time for set up and questions during our first class.
+We will be working with Azure Cloud with a Pay as You Go method, so we will need credits. The credits for students are available here: https://azure.microsoft.com/en-us/free/students/. you can redeem them before class but there will be time for set up and questions during our first class.
 
 ## Grading 
 

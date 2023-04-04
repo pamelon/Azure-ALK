@@ -25,13 +25,83 @@ But first we need to learn how to manage the resources on our Azure platform.
 ![](img/management-groups.png)  
 Source: https://learn.microsoft.com/en-us/certifications/azure-fundamentals/
 
-Azure Portal, Azure CLI, Azure Cloud Shell
+So what do we have? 
+1. Azure Portal - We already learned saw it in action.
 
-# Networking
+2. Azure CLI - command-line tool that provides a way to manage resources on Azure using simple, intuitive commands. It's a good option if you prefer working in a terminal or need to automate resource management tasks. Good integration with other command line tools.  
+
+Azure CLI:  
+
+az group create --name SecondClass_RG --location eastus && \
+az storage account create \
+    --name secondclassstorage \
+    --resource-group SecondClass_RG \
+    --location eastus \
+    --sku Standard_LRS \
+    --kind BlobStorage \
+    --access-tier Hot  
+
+Easy to copy:
+az group create --name SecondClass_RG --location eastus &&  az storage account create   --name secondclassstorage  --resource-group SecondClass_RG   --location eastus  --sku Standard_LRS  --kind BlobStorage  --access-tier Hot  
+
+3. Azure PowerShell - PowerShell module that provides a set of cmdlets for managing Azure resources. It's a good option if you're comfortable with PowerShell and prefer to work in a scripting environment
+
+4. Azure Resource Manager templates - ARMs are declarative JSON files that describe the infrastructure and configuration of Azure resources. Basic of many IaC for projects infrastructure. 
+
+Repo of templates shared by the community: https://github.com/Azure/azure-quickstart-templates  
+
+An example of how it is being used and how you can use it: https://github.com/samelhousseini/km-openai  
+
+5. Terraform - popular open-source IaC tool that allows you to define, provision, and manage infrastructure resources across multiple cloud providers. 
+
+How to start with it: https://learn.microsoft.com/en-us/azure/developer/terraform/get-started-azapi-resource  
+
+The most important difference for me: Terraform automatically handles resource dependencies, while ARM requires you to define dependencies explicitly.
 
 # Identity and Access
 
+![](img/azure-ad.png)  
+Source: https://learn.microsoft.com/en-us/certifications/azure-fundamentals/
+
+You authenticate:
+1. Password
+2. Multifactor
+3. Single Sign-on
+
+External authenticate: 
+
+![](img/azure-external-ad.png)  
+Source: https://learn.microsoft.com/en-us/certifications/azure-fundamentals/
+
+How do you get access to things? 
+
+![](img/azure-rbac.png)  
+Source: https://learn.microsoft.com/en-us/certifications/azure-fundamentals/
+
+Scopes include:
+
+1. A management group (a collection of multiple subscriptions).
+2. A single subscription.
+3. A resource group.
+4. A single resource
+
+Azure RBAC is hierarchical, in that when you grant access at a parent scope, those permissions are inherited by all child scopes.
+
+![](img/zero-trust.png)  
+Source: https://learn.microsoft.com/en-us/certifications/azure-fundamentals/
+
+And how does Azure care about the security when it comes to access? 
+
+![](img/defense-in-depth.png)  
+Source: https://learn.microsoft.com/en-us/certifications/azure-fundamentals/  
+
+Different roles for Infra and Data roles!
+
 # Security
+
+
+
+# Networking
 
 # Homework 
 
@@ -71,8 +141,14 @@ Step 5: Connect to the Virtual Machine
 2. Under "Settings", click on "Networking" and note down the public IP address.
 3. Open a terminal or command prompt and connect to the virtual machine using SSH, specifying the public IP address and the username and password created during the virtual machine creation process.
 
+Step 6: Assign a Role to a User or Group
 
-****Congratulations**, you have successfully created a virtual network, secured access to a virtual machine using a network security group, and connected to the virtual machine using SSH. This exercise covers networking, identity access, and security using Azure Portal and Azure CLI.
+1. Click on "Access control (IAM)" from the left-hand menu and click on the "+ Add" button in your VM.
+2. Select "Add role assignment" and fill in the required information, such as the role, user or group, scope is already the resource you are on, your VM.
+3. Click "Save" to assign the role to the selected user or group.
+
+
+**Congratulations**, you have successfully created a virtual network, secured access to a virtual machine using a network security group, and connected to the virtual machine using SSH. This exercise covers networking, identity access, and security using Azure Portal and Azure CLI.
 
 
 

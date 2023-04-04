@@ -1,6 +1,6 @@
 # Good evening
 
-Hi all, my name is Pamela Krzypkowska and I will be teaching you about Deep Learning this semester. 
+Hi all, my name is Pamela Krzypkowska and I will be teaching you about Azure this semester. 
 Some information about me:
 1. I work as a Cloud Solution Architect specializing in AI @ Microsoft
 2. I 💌 'Animal Crossing' and TikTok
@@ -83,6 +83,14 @@ The Azure free student account offer includes:
 3. Free access to certain software developer tools.
 4. The Azure free student account is an offer for students that gives $100 credit and free developer tools. Also, you can sign up without a credit card.
 5. Get access: https://azure.microsoft.com/en-us/free/students/ 
+
+# Azure Tips
+
+1. Create a RG for each class. Put all the resources there.
+2. After each class delete the RG, the resources won't be needed anymore. 
+3. Always create resources in a close geographical region to your user (in this case you). For Europe I recommend using North Europe. 
+4. Always try to automate your work - IaC approach enables our work to be reproducable. This means use either Cloud Shell or ARM Templates.
+5. Have a naming convention - This will allow your resources to be undestood, for example what are they created for. 
 
 # Homework 
 

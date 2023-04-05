@@ -11,6 +11,11 @@ Some quick terms to repeat:
 3. Resource Group
 4. Azure Portal
 
+# Exams
+
+Get an account here following the instructions on the website: https://learn.microsoft.com/en-us/certifications/student-training-and-certification
+Verify yourself that you are a student: https://verify.microsoft.com/
+
 # Let us start where we left off
 
 ![](img/azure-resources.png)  
@@ -87,6 +92,8 @@ Scopes include:
 
 Azure RBAC is hierarchical, in that when you grant access at a parent scope, those permissions are inherited by all child scopes.
 
+# Security
+
 ![](img/zero-trust.png)  
 Source: https://learn.microsoft.com/en-us/certifications/azure-fundamentals/
 
@@ -97,13 +104,35 @@ Source: https://learn.microsoft.com/en-us/certifications/azure-fundamentals/
 
 Different roles for Infra and Data roles!
 
-# Security
+Best practice for our application security:
+1. Always use Azure Monitor, Application Insights to check the state of your solutions
+2. Transfer logs to Azure Log Analytics for easier log exploration 
+3. Secure your applications with virtual networks and NSGs
+4. Manage access with IaM 
+5. Secure your keys with Azure KeyVault
 
-
+We will be touching on security for different service when we will get to them! 
 
 # Networking
 
-# Homework 
+So what do we get out of the networking: https://azure.microsoft.com/en-us/products/category/networking/  
+
+Virtual network generally:
+![](img/vnet.png)  
+Source: https://learn.microsoft.com/en-us/azure/networking/fundamentals/networking-overview  
+
+OSI Model
+![](img/OSI model.png) 
+Source: http://cisconetworkingbasics.blogspot.com/2013/06/the-osi-network-model-what-you-need-to.html  
+
+# Pricing 
+
+![](img/azure-costopt.png)  
+
+But how do i price my projects with all that? 
+Well, pricing calculator for the rescue: https://azure.microsoft.com/en-us/pricing/calculator/  
+
+# Exercise
 
 Exercise: Create a Virtual Network and Secure Access to a Virtual Machine in Azure
 
@@ -149,6 +178,13 @@ Step 6: Assign a Role to a User or Group
 
 
 **Congratulations**, you have successfully created a virtual network, secured access to a virtual machine using a network security group, and connected to the virtual machine using SSH. This exercise covers networking, identity access, and security using Azure Portal and Azure CLI.
+
+And now get me an ARM Template for that!
+
+# Homework
+
+Do it all with Azure CLI or Terraform. 
+I would strongly recommend to check out Terraform if you are thinking about working with infrastructure for real in the future.
 
 
 

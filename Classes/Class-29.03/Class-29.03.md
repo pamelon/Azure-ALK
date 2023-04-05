@@ -91,6 +91,8 @@ The Azure free student account offer includes:
 3. Always create resources in a close geographical region to your user (in this case you). For Europe I recommend using North Europe. 
 4. Always try to automate your work - IaC approach enables our work to be reproducable. This means use either Cloud Shell or ARM Templates.
 5. Have a naming convention - This will allow your resources to be undestood, for example what are they created for. 
+6. Find ideas for your architectures here: https://learn.microsoft.com/en-us/azure/architecture/ 
+7. Always try to estimate costs of your projects: https://azure.microsoft.com/en-us/pricing/calculator/  
 
 # Homework 
 

@@ -122,7 +122,7 @@ Virtual network generally:
 Source: https://learn.microsoft.com/en-us/azure/networking/fundamentals/networking-overview  
 
 OSI Model
-![](img/OSImodel.png) 
+![](img/OSImodel.jpg) 
 Source: http://cisconetworkingbasics.blogspot.com/2013/06/the-osi-network-model-what-you-need-to.html  
 
 # Pricing 

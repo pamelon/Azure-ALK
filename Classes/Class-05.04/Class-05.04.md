@@ -13,7 +13,7 @@ Some quick terms to repeat:
 
 # Exams
 
-Get an account here following the instructions on the website: https://learn.microsoft.com/en-us/certifications/student-training-and-certification
+Get an account here following the instructions on the website: https://learn.microsoft.com/en-us/certifications/student-training-and-certification  
 Verify yourself that you are a student: https://verify.microsoft.com/
 
 # Let us start where we left off
@@ -125,6 +125,19 @@ OSI Model
 ![](img/OSImodel.jpg) 
 Source: http://cisconetworkingbasics.blogspot.com/2013/06/the-osi-network-model-what-you-need-to.html  
 
+Networking explanation in a video for those interested: https://www.youtube.com/watch?v=OqsXzkXfwRw
+And also more about CIDR: https://www.youtube.com/watch?v=Q1U9wVXRuHA  
+
+Understanding IP addresses: https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking  
+
+This online subnet calculator is the perfect tool to help you figure out out what a network address will be or calculate subnets with masks, when you're building your network infrastructure:
+
+IP Subnet Calculator: https://www.calculator.net/ip-subnet-calculator.html  
+
+There are many ways to build your network infrastructure in Azure. Here all the options: https://learn.microsoft.com/en-us/azure/architecture/guide/networking/networking-start-here  
+
+The most popular architecture is a hub and spoke infrastructure. Check it out here: https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli  
+
 # Pricing 
 
 ![](img/azure-costopt.png)  
@@ -134,7 +147,7 @@ Well, pricing calculator for the rescue: https://azure.microsoft.com/en-us/prici
 
 # Exercise
 
-Exercise: Create a Virtual Network and Secure Access to a Virtual Machine in Azure
+Exercise: Create a Virtual Network and Secure Access to a Virtual Machine in Azure:
 
 Step 1: Create a Resource Group
 
@@ -142,44 +155,48 @@ Step 1: Create a Resource Group
 2. Click on "Resource groups" from the left-hand menu and click the "+ Add" button.
 3. Fill in the required information, such as the resource group name, subscription, and region, then click "Create".
 
-Step 2: Create a Virtual Network
-
-1. Click on "Virtual networks" from the left-hand menu and click the "+ Add" button.
-2. Fill in the required information, such as the virtual network name, address space, and subnet, then click "Create".
-3. Once the virtual network is created, click on it to view its properties.
-4. Under "Settings", click on "Subnets" and create a new subnet with the name "subnet-1" and an address range that is a subset of the virtual network address space.
-
-Step 3: Create a Network Security Group
+Step 2: Create a Network Security Group
 
 1. Click on "Network security groups" from the left-hand menu and click the "+ Add" button.
-2. Fill in the required information, such as the security group name, resource group, and region, then click "Create".
+2. Fill in the required information, such as the security group name, resource group (the one which is already created), and region, then click "Create".
 3. Once the security group is created, click on it to view its properties.
-4. Under "Settings", click on "Inbound security rules" and create a new rule that allows incoming SSH traffic from a specific IP address range.
+
+Step 3: Create a Virtual Network
+
+1. Click on "Virtual networks" from the left-hand menu and click the "+ Add" button.
+2. Fill in the required information, such as the virtual network name, address space (for example 10.0.0.0/16) and a default subnet (for example 10.0.0.0/24), then click "Create". The network needs to be in the same region as the NSG.
+3. Once the virtual network is created, click on it to view its properties.
+4. Under "Settings", click on "Subnets" and create a new subnet with the name "subnet-1" and an address range (for example 10.0.1.0/24) that is a subset of the virtual network address space. When creating add NSG to the subnet created in the step 2.
 
 Step 4: Create a Virtual Machine
 
 1. Click on "Virtual machines" from the left-hand menu and click the "+ Add" button.
-2. Fill in the required information, such as the virtual machine name, resource group, region, and image, then click "Review + create".
+2. Fill in the required information, such as the virtual machine name, resource group, region - both need to be the same as the two other services, and image, then click "Networking". Don't create the virtual machine yet!
 3. In the "Networking" tab, select the virtual network and subnet created in Step 2.
-4. In the "Management" tab, select the "SSH (22)" option under "Inbound port rules".
-5. In the "Advanced" tab, select the network security group created in Step 3 under "Network security group".
+4. Change Public IP to None - we don't want public access to our VM. 
+5. Create the Virtual Machine. You can download keys to the access. This would be needed if you would want to connect through SSH. Here we will test RDP connection. 
 
-Step 5: Connect to the Virtual Machine
-
-1. Once the virtual machine is created, click on it to view its properties.
-2. Under "Settings", click on "Networking" and note down the public IP address.
-3. Open a terminal or command prompt and connect to the virtual machine using SSH, specifying the public IP address and the username and password created during the virtual machine creation process.
+Step 5: Test connection to the Virtual Machine
+1. After creation, go to "Connect" and click "RDP". 
+2. Click "Test your connection" and allow the address to be "My IP Address". 
+3. Change destination to RDP (Remote Desktop Connection). 
+4. Run test. See that the test failed cause all inbound (this means incoming) connections to the VM were disabled during creation. 
+5. Now under "Networking", click on "Add Inbound Port Rule" and create a new rule that allows incoming RDP traffic from your IP address. How you can check your private computer IP address: https://whatismyipaddress.com/. This rule should allow acces to the IP under which your VM is accesable. This info is on the same page seen as NIC Private IP. 
+6. Go back to "Connect" and test the connection again in the same way. Success! Now through RDP you can access and work with your VM on your computer!
 
 Step 6: Assign a Role to a User or Group
 
 1. Click on "Access control (IAM)" from the left-hand menu and click on the "+ Add" button in your VM.
 2. Select "Add role assignment" and fill in the required information, such as the role, user or group, scope is already the resource you are on, your VM.
-3. Click "Save" to assign the role to the selected user or group.
+3. Click "Save" to assign the role to the selected user or group. Ask someone you added to see if they can see the resource. 
+
+Important note: they still will not be able to access the inside of the VM. This is still only allowed from your IP! 
 
 
 **Congratulations**, you have successfully created a virtual network, secured access to a virtual machine using a network security group, and connected to the virtual machine using SSH. This exercise covers networking, identity access, and security using Azure Portal and Azure CLI.
 
 And now get me an ARM Template for that!
+It is actually here for you in this folder.
 
 # Homework
 

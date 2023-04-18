@@ -202,26 +202,7 @@ Now let us add some Serverless to this! We will create an Azure Function that ca
 8. Once the function app is created, navigate to it in the Azure portal.
 9. Click on "Functions" in the sidebar and then click on the "+ New Function" button.
 10. Choose "HTTP trigger" as the template for your function, and give it a name.
-11. In the code editor, replace the existing code with the following JavaScript code:
-
-const sql = require('mssql');  
-
-module.exports = async function (context, req) {  
-    try {  
-        const pool = await sql.connect(process.env['SQLConnectionString']);  
-        const result = await pool.request().query('SELECT * FROM UserSchema.UserTable');  
-        context.res = {  
-            body: result.recordset  
-        };  
-    } catch (err) {  
-        context.log(err);  
-        context.res = {  
-            status: 500,  
-            body: "Error querying the database"  
-        };  
-    }  
-};  
-
+11. In the code editor, replace the existing code with the following JavaScript code, performing our task. It is in [function-code.js](function-code.cjs) file.
 12. Save the function code by clicking on the "Save" button.
 13. To allow your function to connect to your SQL Database, you need to add a connection string to your function app. Go to "Configuration" in the sidebar and add a new application setting called "SQLConnectionString" with the connection string to your SQL Database.
 14. Now, you can test your function by clicking on the "Test/Run" button in the code editor. You should see a response with the data from your SQL Database.
@@ -257,7 +238,7 @@ If you cannot, here is more detailed info:
 - Configure the trigger to watch the first container for new files.
 - Write the code to process the data in the file and save the result in the second container.
 
-Example C# code, performing our task is in [function-code.cs](function-code.cs) file. 
+Example C# code, performing our task is in [function-code-2.cs](function-code-2.cs) file. 
 
 - Deploy the Function App.
 4. Test the function by uploading a file to the first container and verifying that the result is saved in the second container.

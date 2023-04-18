@@ -12,10 +12,10 @@ Class dates and contents are as follows:
 |--------------|---------------|-----------------------------------------|----------------------------------------------|
 | 29.03 (Wed)  | 15:45 - 18:15 |  Azure Access, Introduction to Cloud    | [29.03](Classes/Class-29.03/Class-29.03.md)  |
 | 05.04 (Wed)  | 15:45 - 18:15 |  Networking, Identity, Security         | [05.04](Classes/Class-05.04/Class-05.04.md)  |
-| 19.04 (Wed)  | 15:45 - 18:15 |  Data Services in Azure, Storage        | [19.04](Classes/Class-19.04/Class-19.04.md)  |
+| 19.04 (Wed)  | 15:45 - 18:15 |  Data Services, Storage, Functions      | [19.04](Classes/Class-19.04/Class-19.04.md)  |
 | 26.04 (Wed)  | 15:45 - 18:15 |  Azure Data Factory, Synapse Analytics  | [26.04](Classes/Class-26.04/Class-26.04.md)  |
 | 10.05 (Wed)  | 15:45 - 18:15 |  Azure Databricks, Data Lakehouse       | [10.05](Classes/Class-10.05/Class-10.05.md)  |
-| 17.05 (Wed)  | 15:45 - 18:15 |  Serverless: Azure Functions, PowerBI   | [17.05](Classes/Class-17.05/Class-17.05.md)  |
+| 17.05 (Wed)  | 15:45 - 18:15 |  Governance: Azure Purview, PowerBI     | [17.05](Classes/Class-17.05/Class-17.05.md)  |
 | 24.05 (Wed)  | 15:45 - 18:15 |  Project result presentations           | [24.05](Classes/Class-24.05/Class-24.05.md)  |
 
 We will be working on the given subject and learn each day until 17:30. 

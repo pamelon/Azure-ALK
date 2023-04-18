@@ -85,13 +85,13 @@ SQL (Structured Query Language) is used for several reasons:
 
 7. Ad hoc querying: SQL allows users to quickly and easily query data using simple commands, without the need for complex programming.
 
-![](img/acid.png)
+![](img/acid.png)  
 Source: https://codes.pratikkataria.com/acid-properties-of-transaction/
 
-![](img/sql-schema.png)
+![](img/sql-schema.png)  
 Source: https://database.guide/what-is-a-database-schema/
 
-![](img/azure-databases.png)
+![](img/azure-databases.png)  
 Source: https://learn.microsoft.com/en-us/azure/?product=databases 
 
 # Databases - NoSQL
@@ -117,7 +117,9 @@ Storage do not necessarily fit the traditional definition of a NoSQL databases, 
 
 ![](img/azure-storage-redundancy.png)
 
-![](img/data-lake.jpg)
+And what is this Data Lake all about?  
+
+![](img/data-lake.jpg)  
 Source: https://learn.microsoft.com/en-us/azure/architecture/data-guide/scenarios/data-lake
 
 The hierarchical namespace is a key feature that enables Azure Data Lake Storage Gen2 to provide high-performance data access at object storage scale and price. You can use this feature to organize all the objects and files within your storage account into a hierarchy of directories and nested subdirectories.  
@@ -131,13 +133,13 @@ Advantages of a data lake:
 4. More flexible than a data warehouse, because it can store unstructured and semi-structured data.
 Source: https://learn.microsoft.com/en-us/azure/architecture/data-guide/scenarios/data-lake  
 
-![](img/data-lake-warehouse.png)
+![](img/data-lake-warehouse.png)  
 Source: https://learn.microsoft.com/en-us/azure/architecture/data-guide/scenarios/data-lake  
 
-Data Lake as a base for the modern data warehouse:
-https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/enterprise-data-warehouse
-https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/azure-databricks-modern-analytics-architecture
-https://learn.microsoft.com/en-us/azure/architecture/example-scenario/data/small-medium-data-warehouse
+Data Lake as a base for the modern data warehouse:  
+https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/enterprise-data-warehouse  
+https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/azure-databricks-modern-analytics-architecture  
+https://learn.microsoft.com/en-us/azure/architecture/example-scenario/data/small-medium-data-warehouse  
 
 # Serverless - Azure Functions
 
@@ -162,22 +164,22 @@ Let us start with creating a SQL Database in Azure, adding a schema, and uploadi
 9. Click on "Query editor" in the toolbar to open the SQL query editor.
 10. In the query editor, create a new schema by running the following SQL query: 
 
-CREATE SCHEMA UserSchema;
+CREATE SCHEMA UserSchema;  
 
 11. Next, create a new table in the schema by running the following SQL query: 
 
-CREATE TABLE UserSchema.UserTable (
-   Id INT PRIMARY KEY,
-   Name VARCHAR(50),
-   Age INT
-);
+CREATE TABLE UserSchema.UserTable (  
+   Id INT PRIMARY KEY,  
+   Name VARCHAR(50),  
+   Age INT  
+);  
 
 12. Now, let's add some data to the table. You can do this by inserting rows into the table using the following SQL query:
 
-INSERT INTO UserSchema.UserTable (Id, Name, Age)
-VALUES (1, 'John', 30),
-       (2, 'Jane', 28),
-       (3, 'Bob', 35);
+INSERT INTO UserSchema.UserTable (Id, Name, Age)  
+VALUES (1, 'John', 30),  
+       (2, 'Jane', 28),  
+       (3, 'Bob', 35);  
 
 13. Once you have added data to the table, you can verify that it was inserted correctly by running a SELECT query:
 
@@ -202,23 +204,23 @@ Now let us add some Serverless to this! We will create an Azure Function that ca
 10. Choose "HTTP trigger" as the template for your function, and give it a name.
 11. In the code editor, replace the existing code with the following JavaScript code:
 
-const sql = require('mssql');
+const sql = require('mssql');  
 
-module.exports = async function (context, req) {
-    try {
-        const pool = await sql.connect(process.env['SQLConnectionString']);
-        const result = await pool.request().query('SELECT * FROM UserSchema.UserTable');
-        context.res = {
-            body: result.recordset
-        };
-    } catch (err) {
-        context.log(err);
-        context.res = {
-            status: 500,
-            body: "Error querying the database"
-        };
-    }
-};
+module.exports = async function (context, req) {  
+    try {  
+        const pool = await sql.connect(process.env['SQLConnectionString']);  
+        const result = await pool.request().query('SELECT * FROM UserSchema.UserTable');  
+        context.res = {  
+            body: result.recordset  
+        };  
+    } catch (err) {  
+        context.log(err);  
+        context.res = {  
+            status: 500,  
+            body: "Error querying the database"  
+        };  
+    }  
+};  
 
 12. Save the function code by clicking on the "Save" button.
 13. To allow your function to connect to your SQL Database, you need to add a connection string to your function app. Go to "Configuration" in the sidebar and add a new application setting called "SQLConnectionString" with the connection string to your SQL Database.
@@ -255,40 +257,7 @@ If you cannot, here is more detailed info:
 - Configure the trigger to watch the first container for new files.
 - Write the code to process the data in the file and save the result in the second container.
 
-Example C# code, performing our task:
-
-#r "Microsoft.WindowsAzure.Storage"
-
-using System.IO;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Extensions.Logging;
-using Microsoft.WindowsAzure.Storage.Blob;
-using Microsoft.WindowsAzure.Storage;
-
-public static void Run(
-    Stream myBlob, 
-    string name, 
-    ILogger log, 
-    [Blob("second-container/{name}", FileAccess.Write)] Stream outputBlob)
-{
-    log.LogInformation($"C# Blob trigger function processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
-
-    // Process data in the file
-    StreamReader reader = new StreamReader(myBlob);
-    string data = reader.ReadToEnd();
-    string processedData = ProcessData(data);
-
-    // Save processed data to the second container
-    outputBlob.Write(Encoding.UTF8.GetBytes(processedData), 0, processedData.Length);
-    outputBlob.Close();
-}
-
-private static string ProcessData(string data)
-{
-    // Process the data as per the requirement
-    string processedData = data.ToUpper();
-    return processedData;
-}
+Example C# code, performing our task is in [function-code.cs](function-code.cs) file. 
 
 - Deploy the Function App.
 4. Test the function by uploading a file to the first container and verifying that the result is saved in the second container.

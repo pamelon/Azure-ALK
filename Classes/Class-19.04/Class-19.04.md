@@ -164,12 +164,13 @@ Let us start with creating a SQL Database in Azure, adding a schema, and uploadi
 6. Choose your pricing tier and configure the rest of the settings as desired.
 7. Click "Review + create" to review your settings, and then click "Create" to create the database.
 8. Once the database is created, navigate to it in the Azure portal.
-9. Click on "Query editor" in the toolbar to open the SQL query editor.
-10. In the query editor, create a new schema by running the following SQL query: 
+9. Go to Overview and click to 'Configure Access'. In the Firewall rules, add your client IPv4 address.
+10. Go back to the SQL Database and Click on "Query editor" in the toolbar to open the SQL query editor.
+11. In the query editor, create a new schema by running the following SQL query: 
 
 CREATE SCHEMA UserSchema;  
 
-11. Next, create a new table in the schema by running the following SQL query: 
+12. Next, create a new table in the schema by running the following SQL query: 
 
 CREATE TABLE UserSchema.UserTable (  
    Id INT PRIMARY KEY,  
@@ -177,14 +178,14 @@ CREATE TABLE UserSchema.UserTable (
    Age INT  
 );  
 
-12. Now, let's add some data to the table. You can do this by inserting rows into the table using the following SQL query:
+13. Now, let's add some data to the table. You can do this by inserting rows into the table using the following SQL query:
 
 INSERT INTO UserSchema.UserTable (Id, Name, Age)  
 VALUES (1, 'John', 30),  
        (2, 'Jane', 28),  
        (3, 'Bob', 35);  
 
-13. Once you have added data to the table, you can verify that it was inserted correctly by running a SELECT query:
+14. Once you have added data to the table, you can verify that it was inserted correctly by running a SELECT query:
 
 SELECT * FROM UserSchema.UserTable;
 
@@ -199,8 +200,8 @@ Now let us add some Serverless to this! We will create an Azure Function that ca
 2. Click on "Create a resource" and search for "Function App".
 3. Click on "Function App" and then click on "Create".
 4. Choose your subscription, resource group, and function app name.
-5. Select a runtime stack. For this exercise, choose "JavaScript" as the language and "Windows" as the operating system.
-6. Choose your hosting plan and configure the rest of the settings as desired.
+5. Select a runtime stack. For this exercise, choose "Node.js" as the language and "Windows" as the operating system.
+6. Choose your hosting plan (Serverless - that is the whole point!) and configure the rest of the settings as desired.
 7. Click "Review + create" to review your settings, and then click "Create" to create the function app.
 8. Once the function app is created, navigate to it in the Azure portal.
 9. Click on "Functions" in the sidebar and then click on the "+ New Function" button.

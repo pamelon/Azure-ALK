@@ -136,6 +136,9 @@ Source: https://learn.microsoft.com/en-us/azure/architecture/data-guide/scenario
 ![](img/data-lake-warehouse.png)  
 Source: https://learn.microsoft.com/en-us/azure/architecture/data-guide/scenarios/data-lake  
 
+Getting back to data as a service:  
+![](img/data-as-service-architecture.png)  
+
 Data Lake as a base for the modern data warehouse:  
 https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/enterprise-data-warehouse  
 https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/azure-databricks-modern-analytics-architecture  

@@ -18,7 +18,8 @@ Class dates and contents are as follows:
 | 17.05 (Wed)  | 15:45 - 18:15 |  Governance: Azure Purview, PowerBI     | [17.05](Classes/Class-17.05/Class-17.05.md)  |
 | 24.05 (Wed)  | 15:45 - 18:15 |  Project result presentations           | [24.05](Classes/Class-24.05/Class-24.05.md)  |
 
-We will be working on the given subject and learn each day until 17:30. 
+We will be working on the given subject and learn each day until 17:30.
+We have two parts: 15:45-17:00 for the theoretical part and 17:10-17:40 for the practical part. 
 17:30 - 18:15 will be time for project questions, quandries and consultations. 
 
 Materials used during classes will be shared in this repository in the coresponding folders. 

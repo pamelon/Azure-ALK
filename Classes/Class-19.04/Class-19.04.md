@@ -206,10 +206,10 @@ Now let us add some Serverless to this! We will create an Azure Function that ca
 8. Once the function app is created, navigate to it in the Azure portal.
 9. Click on "Functions" in the sidebar and then click on the "+ New Function" button.
 10. Choose "HTTP trigger" as the template for your function, and give it a name.
-11. In the code editor, replace the existing code with the following JavaScript code, performing our task. It is in [function-code.js](function-code.js) file.
+11. In the code editor, replace the existing code with the following JavaScript code, performing our task. It is in [function-code-no-connection-string.js](function-code-no-connection-string.js) file.
 12. Save the function code by clicking on the "Save" button.
-13. To allow your function to connect to your SQL Database, you need to add a connection string to your function app. Go to "Configuration" in the sidebar and add a new application setting called "SQLConnectionString" with the connection string to your SQL Database.
-14. Now, you can test your function by clicking on the "Test/Run" button in the code editor. You should see a response with the data from your SQL Database.
+13. Your runtime might not have the needed mssql package so you need to install it. Click on the "Console" tab in the function app and run the following command: npm install mssql. It should install the package in the runtime and you can close the console.
+14. Now, you can test your function by clicking on the "Test/Run" button in the code editor. You should see a response with the data from your SQL Database both in the 'Output' and in the logs.
 15. Click on the "Run" button in the function code editor to run the function. This will simulate an HTTP request to your function.
 16. After the function finishes running, you should see a response in the "Output" tab of the function code editor. The response should contain the data from your SQL Database.
 

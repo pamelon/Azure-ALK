@@ -142,7 +142,15 @@ Source: https://towardsdatascience.com/a-beginners-guide-to-apache-spark-ff301cb
 
 ![](img/apache-spark.png)
 
-![](img/spark-work.png) 
+![](img/spark-work.png)
+
+![](img/spark-architecture.png)  
+
+![](img/synapse-spark.png) 
+
+Strong recommendation for all things Spark: https://www.youtube.com/@AdvancingAnalytics  
+Intro to Synapse: https://www.youtube.com/watch?v=2DX7dgR8cEw  
+Intro to Spark: https://www.youtube.com/watch?v=f8j5t_xaly4&list=PLHN2ijxAWBaMY4_1xMhOoeRWiZ6_d8F9s  
 
 And back to Synapse overview now:  
 
@@ -158,6 +166,9 @@ And this one you would all surely like :DDD :
 
 Fun fact which is indeed important:   
 ![](img/polaris.png)
+
+The quick glance into Synapse Studio (what is there):  
+![](img/synapse-studio.png)
 
 And the exploration will be done in our exercise after the break <3
 

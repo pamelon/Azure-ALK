@@ -120,11 +120,24 @@ So what does it give us?
 
 ![](img/synapse-overview-2.png)  
 
+So we can work with our data with various engines: 
+
+![](img/synapse-sql.png)  
+
 ![](img/synapse-features.png)
 
 ![](img/synapse-security.png)
 
+And this one you would all surely like :DDD :  
 
+![](img/synapse-networking.png)
+
+![](img/synapse-ml.png)
+
+Fun fact which is indeed important:   
+![](img/polaris.png)
+
+And the exploration will be done in our exercise after the break <3
 
 # Exercise 
 

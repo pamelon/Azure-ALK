@@ -40,7 +40,7 @@ ELT:
 
 It used to be the SSIS World. Now it is the ADF world.
 
-![](img/SSIS.png)
+![](img/SSIS.jpg)
 
 We have already seen the architecture that look something like this:
 
@@ -94,7 +94,37 @@ The technological research and consulting firm Gartner defines four common types
 4. Prescriptive analytics, which enables autonomous decision making based on real-time or near real-time analysis of data, using predictive analytics.  
 Source: https://learn.microsoft.com/en-us/training/modules/introduction-azure-synapse-analytics/
 
-![](img/analytics-taxonomy.png)
+![](img/analytics-taxonomy.png)   
+Source: https://learn.microsoft.com/en-us/training/modules/introduction-azure-synapse-analytics/
+
+We already talked about some of the architectures of the modern data platform. How it used to look like:
+
+![](img/classic-dwh.jpg)    
+Source: http://dataglass.blogspot.com/  
+
+Remember - we used to be in the all-the-rules landscape. 
+
+Now we have scalable and secure (not only) SQL analytics platform:  
+![](img/azure-synapse.png)  
+
+Back to architectures and where Synapse is now with the modern data warehouse:  
+https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/enterprise-data-warehouse  
+https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/azure-databricks-modern-analytics-architecture  
+https://learn.microsoft.com/en-us/azure/architecture/example-scenario/data/small-medium-data-warehouse  
+
+![](img/synapse-reference-architecture.png)
+
+So what does it give us? 
+
+![](img/synapse-overview.png)  
+
+![](img/synapse-overview-2.png)  
+
+![](img/synapse-features.png)
+
+![](img/synapse-security.png)
+
+
 
 # Exercise 
 

@@ -104,6 +104,9 @@ Source: http://dataglass.blogspot.com/
 
 Remember - we used to be in the all-the-rules landscape. 
 
+One or the other?  
+![](img/data-lake-warehouse.png)  
+
 Now we have scalable and secure (not only) SQL analytics platform:  
 ![](img/azure-synapse.png)  
 
@@ -114,6 +117,8 @@ https://learn.microsoft.com/en-us/azure/architecture/example-scenario/data/small
 
 ![](img/synapse-reference-architecture.png)
 
+![](img/modern-data-warehouse.png)
+
 So what does it give us? 
 
 ![](img/synapse-overview.png)  
@@ -123,6 +128,23 @@ So what does it give us?
 So we can work with our data with various engines: 
 
 ![](img/synapse-sql.png)  
+![](img/synapse-serverless.png)  
+
+Use cases:
+1. Dala Lake exploration - You have data in the storage in form of files and uses client tools to explore the data to understand its shape and value by running interactive queries.
+2. Data Lake Transformation - Customer has data in the storage in form of files and uses integration tools to transform the data into new optimized data sets. Tools issue queries on schedule or upon an event.​
+3. Logical Datawarehouse - ata is in the storage in form of files and uses BI tools to visualize the data for various purposes. Tools issue queries when reports are refresh - either on schedule or on demand.​ 
+
+So what about this spark? 
+
+Apache Spark is a unified computing engine and a set of libraries for parallel data processing on computer clusters. As of the time of this writing, Spark is the most actively developed open source engine for this task; making it the de facto tool for any developer or data scientist interested in Big Data. Spark supports multiple widely used programming languages (Python, Java, Scala, and R), includes libraries for diverse tasks ranging from SQL to streaming and machine learning, and runs anywhere from a laptop to a cluster of thousands of servers. This makes it an easy system to start with and scale up to Big Data processing on an incredibly large scale.  
+Source: https://towardsdatascience.com/a-beginners-guide-to-apache-spark-ff301cb4cd92  
+
+![](img/apache-spark.png)
+
+![](img/spark-work.png) 
+
+And back to Synapse overview now:  
 
 ![](img/synapse-features.png)
 

@@ -1,5 +1,10 @@
 # Good evening again!
 
+Important:
+1. Next week class (online)
+2. In-two-weeks class (onsite, jetlagged, projects)
+3. PowerBI Classes and Access (?)
+
 So lets start with:
 1. Any questions, concerns or thoughts from our last lecture? Homework? 
 2. So one from me, what did we talk about last time? 
@@ -74,9 +79,9 @@ Delta lake transaction log indeed.
 
 The Delta Lake transaction log (also known as the DeltaLog) is an ordered record of every transaction that has ever been performed on a Delta Lake table since its inception.  
 
-![](deltalog.png)  
-![](deltalog2.png)  
-![](deltalog3.png)  
+![](img/deltalog.png)  
+![](img/deltalog2.png)  
+![](img/deltalog3.png)  
 Source: https://www.databricks.com/blog/2019/08/21/diving-into-delta-lake-unpacking-the-transaction-log.html  
 
 When a user creates a Delta Lake table, that table’s transaction log is automatically created in the _delta_log subdirectory. As he or she makes changes to that table, those changes are recorded as ordered, atomic commits in the transaction log.
@@ -97,6 +102,24 @@ Tables created on Azure Databricks use the Delta Lake protocol by default. When 
 
 So we have one part, here comes the second one - Unity Catalog. 
 
+Unity Catalog provides centralized access control, auditing, lineage, and data discovery capabilities across Azure Databricks workspaces. Unity Catalog is a managed service that is deployed in your Azure subscription and is available in all regions where Azure Databricks is available.  
+Source: https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/  
+
+![](img/unity-catalog.png)  
+Source: https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/  
+
+In Unity Catalog, the hierarchy of primary data objects flows from metastore to table:
+1. Metastore: The top-level container for metadata. Each metastore exposes a three-level namespace (catalog.schema.table) that organizes your data.
+2. Catalog: The first layer of the object hierarchy, used to organize your data assets.
+3. Schema: Also known as databases, schemas are the second layer of the object hierarchy and contain tables and views.
+4. Table: At the lowest level in the object hierarchy are tables and views.
+
+![](img/unity-schema.png)  
+Source: https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/  
+
+A metastore is the top-level container of objects in Unity Catalog. It stores metadata about data assets (tables and views) and the permissions that govern access to them. Azure Databricks account admins can create a metastore for each region in which they operate and assign them to Azure Databricks workspaces in the same region. For a workspace to use Unity Catalog, it must have a Unity Catalog metastore attached.  
+
+Each metastore is configured with a root storage location in an Azure Data Lake Storage Gen2 container in your Azure account. This storage location is used by default for storing data for managed tables.  
 
 # Spark again! 
 
@@ -116,6 +139,12 @@ So for today:
 Or if you want to do some more advanced stuff:
 1. DE3 and DE4 from Data Engineering part https://github.com/databricks-academy/data-engineering-with-databricks-english 
 2. If you want you can start from DE1 where will be Intro to PySpark and also ELT in DBX. 
+
+Or if you want to get more familiar with Unity Catalog:
+1. Go to: https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/get-started
+2. Follow the instructions.
+3. Set up managed identities with Unity Catalog: https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/azure-managed-identities
+4. Work with SQL and Unity Catalog: https://learn.microsoft.com/en-us/azure/databricks/getting-started/uc-metastore-admin-quickstart  
 
 # Homework
 

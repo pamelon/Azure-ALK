@@ -24,7 +24,7 @@ The project is done in pairs. Please choose someone with a similar Cloud experie
 - Obtains a dataset (your choice, but cross-sectional data please) from the Polish Statistical Office API (https://api.stat.gov.pl/Home/BdlApi?lang=en),
 - Saves it in cloud storage,
 - Performs data transformations (for example discarding some columns, one-hot encoding categorical variables etc.),
-- Puts the transformed data into a database of your choice,
+- Puts the transformed data into a database of your choice (can be Storage solution as well),
 - Executes Python code applying k-means clustering (or other clustering algorithm of your choice) to the data from the database and saves the clustering results.
 2. Visualize the obtained clusters in Power BI in the cloud.
 3. Write an Azure Function returning basic statistics (like mean, median, count, variance, but specified in the request by the user) for each of the clusters, that can be called through an HTTP request by anyone having appropriate credentials.

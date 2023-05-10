@@ -179,6 +179,14 @@ In addition to the workspace UI, you can interact with Azure Databricks programm
 3. Terraform
 Source: https://learn.microsoft.com/en-us/azure/databricks/introduction/  
 
+Use cases on architectures:
+![](img/databricks-ETL.png)
+![](img/databricks-ML.png)
+![](img/databricks-SQL.png)
+
+Also: 
+![](img/databricks-synapse-integration.png)
+
 Databricks is actually much more than just a Lakehouse platform. 
 
 Databricks architectures:

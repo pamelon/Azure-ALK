@@ -43,6 +43,10 @@ And other things..
 ![](img/lakehouse-architecture.png)  
 Source: https://www.databricks.com/glossary/data-lakehouse
 
+![](img/azure-lakehouse.png)
+
+![](img/mdw.png)
+
 The data lakehouse replaces the current dependency on data lakes and data warehouses for modern data companies that desire:
 
 1. Open, direct access to data stored in standard data formats.
@@ -57,6 +61,10 @@ Azure Databricks has two key components:
 2. Unity Catalog - Unity Catalog ensures that you have complete control over who gains access to which data and provides a centralized mechanism for managing all data governance and access controls without needing to replicate your data.
 Source: https://learn.microsoft.com/en-us/azure/databricks/lakehouse/  
 
+For academic types: https://www.databricks.com/research/lakehouse-a-new-generation-of-open-platforms-that-unify-data-warehousing-and-advanced-analytics  
+
+Short intro to Lakehouse: https://www.youtube.com/watch?v=CfubH7XpRVw  
+
 # Delta
 
 Delta Lake: https://delta.io/ - Delta Lake is an open-source storage framework that enables building a
@@ -67,6 +75,8 @@ Source: https://delta.io/
 
 ![](img/medalion-architecture.png)  
 Source: https://www.databricks.com/glossary/medallion-architecture  
+
+![](img/semantic-lakehouse.png)  
 
 A medallion architecture is a data design pattern used to logically organize data in a lakehouse, with the goal of incrementally and progressively improving the structure and quality of data as it flows through each layer of the architecture (from Bronze ⇒ Silver ⇒ Gold layer tables). Medallion architectures are sometimes also referred to as "multi-hop" architectures.  
 Source: https://www.databricks.com/glossary/medallion-architecture  
@@ -98,6 +108,8 @@ Tables created on Azure Databricks use the Delta Lake protocol by default. When 
 1. Metadata used to reference the table is added to the metastore in the declared schema or database.
 2. Data and table metadata are saved to a directory in cloud object storage.
 
+Also delta live table: https://www.databricks.com/product/delta-live-tables  
+
 # Unity Catalog
 
 So we have one part, here comes the second one - Unity Catalog. 
@@ -123,7 +135,44 @@ Each metastore is configured with a root storage location in an Azure Data Lake 
 
 # Spark again! 
 
+![](img/spark-work.png)  
+
+![](img/spark-architecture.png)  
+
 # Azure Databricks
+
+Our customers use Azure Databricks to process, store, clean, share, analyze, model, and monetize their datasets with solutions from BI to machine learning. Use the Azure Databricks platform to build and deploy data engineering workflows, machine learning models, analytics dashboards, and more.
+
+The Azure Databricks workspace provides a unified interface and tools for most data tasks, including:
+
+1. Data processing workflows scheduling and management
+2. Working in SQL
+3. Generating dashboards and visualizations
+4. Data ingestion
+5. Managing security, governance, and HA/DR
+6. Data discovery, annotation, and exploration
+7. Compute management
+8. Machine learning (ML) modeling and tracking
+9. ML model serving
+10. Source control with Git
+
+In addition to the workspace UI, you can interact with Azure Databricks programmatically with the following tools:
+
+1. REST API
+2. CLI
+3. Terraform
+Source: https://learn.microsoft.com/en-us/azure/databricks/introduction/  
+
+Databricks is actually much more than just a Lakehouse platform. 
+
+Databricks architectures:
+1. Stream processing: https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/data/stream-processing-databricks
+2. Data Science/ML: https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/azure-databricks-data-science-machine-learning
+3. MLOps: https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/ai/orchestrate-mlops-azure-databricks
+4. Modern Analytics: https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/azure-databricks-modern-analytics-architecture  
+
+Lakehouse in Synapse: https://learn.microsoft.com/en-us/azure/architecture/example-scenario/analytics/secure-data-lakehouse-synapse  
+Lakehouse architecture with ML: https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/ai/orchestrate-mlops-azure-databricks  
 
 Let us see the insides of Azure Databricks!
 

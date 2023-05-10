@@ -36,6 +36,10 @@ And are they any better?
 A data lakehouse is a new, open data management architecture that combines the flexibility, cost-efficiency, and scale of data lakes with the data management and ACID transactions of data warehouses, enabling business intelligence (BI) and machine learning (ML) on all data.  
 Source: https://www.databricks.com/glossary/data-lakehouse  
 
+What do we need? 
+
+![](img/analytics-needs.png)  
+
 So how is it different from Modern Data Warehouse we've been discussing? 
 (In simple terms) The moment when we move to no-rules to rules!  
 And other things.. 
@@ -66,6 +70,9 @@ For academic types: https://www.databricks.com/research/lakehouse-a-new-generati
 Short intro to Lakehouse: https://www.youtube.com/watch?v=CfubH7XpRVw  
 
 # Delta
+
+The fundaments:
+![](img/lakehouse-fundation.png)  
 
 Delta Lake: https://delta.io/ - Delta Lake is an open-source storage framework that enables building a
 Lakehouse architecture with compute engines including Spark, PrestoDB, Flink, Trino, and Hive and APIs for Scala, Java, Rust, Ruby, and Python.
@@ -140,6 +147,15 @@ Each metastore is configured with a root storage location in an Azure Data Lake 
 ![](img/spark-architecture.png)  
 
 # Azure Databricks
+
+Back to lakehouse on Databricks:
+![](img/lakehouse-databricks.png)
+
+The framework:
+![](img/lakehouse-principle-1.png)
+![](img/lakehouse-principle-2.png)
+![](img/lakehouse-principle-3.png)
+![](img/lakehouse-principle-4.png)
 
 Our customers use Azure Databricks to process, store, clean, share, analyze, model, and monetize their datasets with solutions from BI to machine learning. Use the Azure Databricks platform to build and deploy data engineering workflows, machine learning models, analytics dashboards, and more.
 

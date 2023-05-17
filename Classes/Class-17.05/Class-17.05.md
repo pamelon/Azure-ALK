@@ -107,3 +107,4 @@ Purview:
 
 # Homework
 
+Get back to th exercises and learn about the services that interest you! 
